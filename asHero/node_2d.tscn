@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://dh5eiwdvwc4fl"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_rir4m"]
+[ext_resource type="Texture2D" uid="uid://djjdsemorfwjs" path="res://resource/Cards/Card Borders etc/cardborder.png" id="2_6xxfl"]
+[ext_resource type="Script" path="res://scripts/new_game.gd" id="2_jlsrd"]
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="2_wkyxb"]
+[ext_resource type="Script" path="res://scripts/continue_game.gd" id="3_gs6uw"]
+[ext_resource type="Script" path="res://scripts/exit_game.gd" id="4_r5px0"]
+[ext_resource type="Script" path="res://scripts/Scene.gd" id="7_10q4h"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_rir4m")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_wkyxb")
+
+[node name="new_game" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 230.0
+offset_right = 540.0
+offset_bottom = 330.0
+text = "New game"
+script = ExtResource("2_jlsrd")
+
+[node name="continue_game" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 360.0
+offset_right = 540.0
+offset_bottom = 460.0
+text = "Continue game"
+script = ExtResource("3_gs6uw")
+
+[node name="exit_game" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 495.0
+offset_right = 540.0
+offset_bottom = 595.0
+text = "Exit game"
+script = ExtResource("4_r5px0")
+
+[node name="Board" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="player_name" type="Label" parent="Board"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Card" type="Node2D" parent="."]
+
+[node name="Card" type="Sprite2D" parent="Card"]
+visible = false
+
+[node name="Border" type="Sprite2D" parent="Card/Card"]
+visible = false
+position = Vector2(1520, 691)
+scale = Vector2(3.50218, 4)
+texture = ExtResource("2_6xxfl")
+
+[node name="Scene" type="Node2D" parent="."]
+script = ExtResource("7_10q4h")
+
+[connection signal="button_up" from="Menu/new_game" to="Menu" method="_on_new_game_button_up"]
+[connection signal="button_up" from="Menu/continue_game" to="Menu" method="_on_continue_game_button_up"]
+[connection signal="button_up" from="Menu/exit_game" to="Menu" method="_on_exit_game_button_up"]

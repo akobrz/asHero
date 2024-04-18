@@ -1,0 +1,18 @@
+{
+	"1" : {
+		"description" : "choice 1",
+		"effect" : "choice 1"
+	},
+	"2" : {
+		"description" : "choice 2",
+		"effect" : "choice 2"
+	},
+	"3" : {
+		"description" : "choice 3",
+		"effect" : "choice 3"
+	},
+	"4" : {
+		"description" : "choice 4",
+		"effect" : "choice 4"
+	},
+}

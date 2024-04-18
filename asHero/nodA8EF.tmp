@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh5eiwdvwc4fl"]
+
+[ext_resource type="Script" path="res://scripts/CardBase.gd" id="1_5l22p"]
+
+[node name="CardBase" type="MarginContainer"]
+script = ExtResource("1_5l22p")

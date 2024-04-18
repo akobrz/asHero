@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="asHero"
+run/main_scene="res://node_2d.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0.270588, 0.0156863, 0.14902, 1)
+boot_splash/show_image=false
+config/icon="res://resource/icons/icon.svg"
+
+[autoload]
+
+StaticData="*res://singletons/static_data.gd"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=1200
+window/size/resizable=false
+window/handheld/orientation=1
+
+[rendering]
+
+renderer/rendering_method="mobile"

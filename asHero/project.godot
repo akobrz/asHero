@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="asHero"
-run/main_scene="res://node_2d.tscn"
+run/main_scene="res://scenes/game/game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0.270588, 0.0156863, 0.14902, 1)
 boot_splash/show_image=false
-config/icon="res://resource/icons/icon.svg"
+config/icon="res://assets/board/icons/icon.svg"
 
 [autoload]
 
-StaticData="*res://singletons/static_data.gd"
+StaticData="*res://global/singletons/data_loader.gd"
 
 [display]
 

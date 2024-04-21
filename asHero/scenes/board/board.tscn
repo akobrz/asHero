@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdq343rxckbyl"]
+
+[ext_resource type="Script" path="res://scenes/board/scripts/board.gd" id="1_jfopi"]
+[ext_resource type="Texture2D" uid="uid://dx01uutwoybxh" path="res://assets/board/cards/backgrounds/black_texture.png" id="2_mxbke"]
+[ext_resource type="Texture2D" uid="uid://dh8gm2tuhr2nv" path="res://assets/board/icons/Icon.4_17.png" id="2_pe5j0"]
+[ext_resource type="Texture2D" uid="uid://soqw5k63d6bl" path="res://assets/board/cards/borders/gold_cardborder.png" id="3_5mp3x"]
+[ext_resource type="Texture2D" uid="uid://brtpww0uhyfis" path="res://assets/board/icons/Icon.1_55.png" id="3_8falb"]
+[ext_resource type="Texture2D" uid="uid://elbp31fwrht5" path="res://assets/board/icons/Icon.1_50.png" id="4_4a1my"]
+[ext_resource type="Texture2D" uid="uid://0up4j8nh64wo" path="res://assets/board/icons/Icons8_78.png" id="5_m3hw1"]
+[ext_resource type="Texture2D" uid="uid://b7dtkvdd6wptd" path="res://assets/board/icons/Icon.5_34.png" id="6_bwcyx"]
+
+[node name="board" type="Node2D"]
+script = ExtResource("1_jfopi")
+
+[node name="Status" type="Node2D" parent="."]
+position = Vector2(12, 23)
+
+[node name="parameters" type="Node2D" parent="Status"]
+
+[node name="health" type="Sprite2D" parent="Status/parameters"]
+position = Vector2(116, 105)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_pe5j0")
+
+[node name="combat" type="Sprite2D" parent="Status/parameters"]
+position = Vector2(244, 105)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_8falb")
+
+[node name="prestige" type="Sprite2D" parent="Status/parameters"]
+position = Vector2(372, 105)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_4a1my")
+
+[node name="money" type="Sprite2D" parent="Status/parameters"]
+position = Vector2(500, 105)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_m3hw1")
+
+[node name="ability" type="Sprite2D" parent="Status/parameters"]
+position = Vector2(628, 105)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_bwcyx")
+
+[node name="statuses" type="Node2D" parent="Status"]
+
+[node name="Table" type="Node2D" parent="."]
+
+[node name="Card" type="Node2D" parent="Table"]
+
+[node name="Image" type="Sprite2D" parent="Table/Card"]
+visible = false
+texture = ExtResource("2_mxbke")
+
+[node name="Border" type="Sprite2D" parent="Table/Card"]
+visible = false
+position = Vector2(1520, 691)
+scale = Vector2(3.50218, 4)
+texture = ExtResource("3_5mp3x")
+
+[node name="Info" type="Sprite2D" parent="Table/Card"]

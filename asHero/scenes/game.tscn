@@ -1,23 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh5eiwdvwc4fl"]
+[gd_scene load_steps=3 format=3 uid="uid://dh5eiwdvwc4fl"]
 
-[ext_resource type="Script" path="res://scenes/game/scripts/init.gd" id="1_fpcqq"]
-[ext_resource type="Script" path="res://scenes/menu/scripts/menu.gd" id="2_epy87"]
-[ext_resource type="PackedScene" uid="uid://bdq343rxckbyl" path="res://scenes/board/board.tscn" id="2_qlvg1"]
-[ext_resource type="Script" path="res://scenes/menu/scripts/new_game.gd" id="3_nid6w"]
-[ext_resource type="Script" path="res://scenes/menu/scripts/continue_game.gd" id="4_gl8iq"]
-[ext_resource type="Script" path="res://scenes/menu/scripts/exit_game.gd" id="5_qv463"]
+[ext_resource type="Script" path="res://scenes/game/scripts/init.gd" id="1_kxe5d"]
+[ext_resource type="Script" path="res://scenes/menu/scripts/menu.gd" id="2_ct2an"]
 
-[node name="Game" type="Node"]
-script = ExtResource("1_fpcqq")
-
-[node name="board" parent="." instance=ExtResource("2_qlvg1")]
+[node name="game" type="Node"]
+script = ExtResource("1_kxe5d")
 
 [node name="menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_epy87")
+script = ExtResource("2_ct2an")
 
 [node name="new_game" type="Button" parent="menu"]
 layout_mode = 0
@@ -26,7 +20,6 @@ offset_top = 230.0
 offset_right = 540.0
 offset_bottom = 330.0
 text = "New game"
-script = ExtResource("3_nid6w")
 
 [node name="continue_game" type="Button" parent="menu"]
 layout_mode = 0
@@ -35,7 +28,6 @@ offset_top = 360.0
 offset_right = 540.0
 offset_bottom = 460.0
 text = "Continue game"
-script = ExtResource("4_gl8iq")
 
 [node name="exit_game" type="Button" parent="menu"]
 layout_mode = 0
@@ -44,7 +36,6 @@ offset_top = 495.0
 offset_right = 540.0
 offset_bottom = 595.0
 text = "Exit game"
-script = ExtResource("5_qv463")
 
 [connection signal="button_up" from="menu/new_game" to="menu" method="_on_new_game_button_up"]
 [connection signal="button_up" from="menu/continue_game" to="menu" method="_on_continue_game_button_up"]

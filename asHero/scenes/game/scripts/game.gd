@@ -2,11 +2,10 @@ extends Node2D
 
 @onready var menu: Control = $menu
 @onready var board: Node2D = $board
-@onready var scene: Node2D = $scene
+@onready var test: Area2D = $test
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	board.visible = false
 	pass # Replace with function body.
 
 

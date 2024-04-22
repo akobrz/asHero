@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://di2dgorpjt7gi"]
+
+[ext_resource type="Texture2D" uid="uid://bvlabepa1c60p" path="res://assets/board/cards/units/archer.png" id="1_p1vhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht1kr"]
+
+[node name="test" type="Area2D"]
+position = Vector2(100, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ht1kr")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(300.75, 442.904)
+scale = Vector2(0.475298, 0.433357)
+texture = ExtResource("1_p1vhn")

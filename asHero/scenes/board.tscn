@@ -1,61 +1,81 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdq343rxckbyl"]
+[gd_scene load_steps=13 format=3 uid="uid://di2dgorpjt7gi"]
 
-[ext_resource type="Script" path="res://scenes/board/scripts/board.gd" id="1_iwhxp"]
+[ext_resource type="Texture2D" uid="uid://bm4b6puenn87e" path="res://assets/board/backgrounds/default_background.jpg" id="1_oecog"]
 [ext_resource type="Texture2D" uid="uid://dh8gm2tuhr2nv" path="res://assets/board/icons/Icon.4_17.png" id="2_460fs"]
 [ext_resource type="Texture2D" uid="uid://brtpww0uhyfis" path="res://assets/board/icons/Icon.1_55.png" id="3_ls64j"]
 [ext_resource type="Texture2D" uid="uid://elbp31fwrht5" path="res://assets/board/icons/Icon.1_50.png" id="4_0rvtk"]
 [ext_resource type="Texture2D" uid="uid://0up4j8nh64wo" path="res://assets/board/icons/Icons8_78.png" id="5_4w8yy"]
 [ext_resource type="Texture2D" uid="uid://b7dtkvdd6wptd" path="res://assets/board/icons/Icon.5_34.png" id="6_bda2p"]
-[ext_resource type="Texture2D" uid="uid://dx01uutwoybxh" path="res://assets/board/cards/backgrounds/black_texture.png" id="7_lkn8n"]
-[ext_resource type="Texture2D" uid="uid://soqw5k63d6bl" path="res://assets/board/cards/borders/gold_cardborder.png" id="8_7xy7t"]
+[ext_resource type="Texture2D" uid="uid://lqid74sid42n" path="res://assets/board/icons/Icon.1_06.png" id="7_wqmp6"]
+[ext_resource type="Texture2D" uid="uid://bwbml4qdvm7b6" path="res://assets/board/cards/backgrounds/Card.png" id="8_u7ro6"]
 
-[node name="board" type="Node2D"]
-script = ExtResource("1_iwhxp")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht1kr"]
+size = Vector2(768, 1200)
 
-[node name="status" type="Node2D" parent="."]
-position = Vector2(12, 23)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhq4b"]
+size = Vector2(640, 192)
 
-[node name="parameters" type="Node2D" parent="status"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncsbn"]
+size = Vector2(640, 64)
 
-[node name="health" type="Sprite2D" parent="status/parameters"]
-position = Vector2(116, 105)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw2rf"]
+size = Vector2(640, 832)
+
+[node name="board" type="Area2D"]
+position = Vector2(100, 100)
+
+[node name="BoardShape" type="CollisionShape2D" parent="."]
+position = Vector2(284, 500)
+shape = SubResource("RectangleShape2D_ht1kr")
+
+[node name="Background" type="Sprite2D" parent="BoardShape"]
+position = Vector2(-9.53674e-07, -2.02656e-05)
+scale = Vector2(0.4, 1.06572)
+texture = ExtResource("1_oecog")
+
+[node name="Icons" type="CollisionShape2D" parent="."]
+position = Vector2(284, 60)
+shape = SubResource("RectangleShape2D_dhq4b")
+
+[node name="health" type="Sprite2D" parent="Icons"]
+position = Vector2(-256, -32)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_460fs")
 
-[node name="combat" type="Sprite2D" parent="status/parameters"]
-position = Vector2(244, 105)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_ls64j")
-
-[node name="prestige" type="Sprite2D" parent="status/parameters"]
-position = Vector2(372, 105)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_0rvtk")
-
-[node name="money" type="Sprite2D" parent="status/parameters"]
-position = Vector2(500, 105)
+[node name="gold" type="Sprite2D" parent="Icons"]
+position = Vector2(128, -32)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_4w8yy")
 
-[node name="ability" type="Sprite2D" parent="status/parameters"]
-position = Vector2(628, 105)
+[node name="prestige" type="Sprite2D" parent="Icons"]
+position = Vector2(0, -32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_0rvtk")
+
+[node name="combat" type="Sprite2D" parent="Icons"]
+position = Vector2(-128, -32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_ls64j")
+
+[node name="ability" type="Sprite2D" parent="Icons"]
+position = Vector2(256, -32)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_bda2p")
 
-[node name="statuses" type="Node2D" parent="status"]
+[node name="Statuses" type="CollisionShape2D" parent="."]
+position = Vector2(284, 188)
+shape = SubResource("RectangleShape2D_ncsbn")
 
-[node name="table" type="Node2D" parent="."]
+[node name="Icon_106" type="Sprite2D" parent="Statuses"]
+position = Vector2(-288, 0)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_wqmp6")
 
-[node name="card" type="Node2D" parent="table"]
+[node name="Deck" type="CollisionShape2D" parent="."]
+position = Vector2(284, 636)
+shape = SubResource("RectangleShape2D_yw2rf")
 
-[node name="image" type="Sprite2D" parent="table/card"]
-visible = false
-texture = ExtResource("7_lkn8n")
-
-[node name="border" type="Sprite2D" parent="table/card"]
-visible = false
-position = Vector2(1520, 691)
-scale = Vector2(3.50218, 4)
-texture = ExtResource("8_7xy7t")
-
-[node name="info" type="Sprite2D" parent="table/card"]
+[node name="TestCard" type="Sprite2D" parent="Deck"]
+position = Vector2(-8, -7.99997)
+scale = Vector2(0.819489, 0.819489)
+texture = ExtResource("8_u7ro6")

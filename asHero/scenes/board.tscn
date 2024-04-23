@@ -1,13 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://di2dgorpjt7gi"]
+[gd_scene load_steps=15 format=3 uid="uid://di2dgorpjt7gi"]
 
-[ext_resource type="Texture2D" uid="uid://bm4b6puenn87e" path="res://assets/board/backgrounds/default_background.jpg" id="1_oecog"]
+[ext_resource type="Script" path="res://scenes/scripts/board.gd" id="1_3rr1n"]
 [ext_resource type="Texture2D" uid="uid://dh8gm2tuhr2nv" path="res://assets/board/icons/Icon.4_17.png" id="2_460fs"]
+[ext_resource type="Texture2D" uid="uid://dx01uutwoybxh" path="res://assets/board/cards/backgrounds/black_texture.png" id="2_odp24"]
 [ext_resource type="Texture2D" uid="uid://brtpww0uhyfis" path="res://assets/board/icons/Icon.1_55.png" id="3_ls64j"]
 [ext_resource type="Texture2D" uid="uid://elbp31fwrht5" path="res://assets/board/icons/Icon.1_50.png" id="4_0rvtk"]
 [ext_resource type="Texture2D" uid="uid://0up4j8nh64wo" path="res://assets/board/icons/Icons8_78.png" id="5_4w8yy"]
 [ext_resource type="Texture2D" uid="uid://b7dtkvdd6wptd" path="res://assets/board/icons/Icon.5_34.png" id="6_bda2p"]
 [ext_resource type="Texture2D" uid="uid://lqid74sid42n" path="res://assets/board/icons/Icon.1_06.png" id="7_wqmp6"]
-[ext_resource type="Texture2D" uid="uid://bwbml4qdvm7b6" path="res://assets/board/cards/backgrounds/Card.png" id="8_u7ro6"]
+[ext_resource type="Texture2D" uid="uid://dh5getb3wijr5" path="res://assets/board/cards/backgrounds/card-background-with-tower-shade.png" id="9_45sy3"]
+[ext_resource type="Texture2D" uid="uid://b5nuti8g1euh4" path="res://assets/board/cards/borders/card-inscriptions.png" id="10_mhji5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ht1kr"]
 size = Vector2(768, 1200)
@@ -21,17 +23,18 @@ size = Vector2(640, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yw2rf"]
 size = Vector2(640, 832)
 
-[node name="board" type="Area2D"]
+[node name="Board" type="Area2D"]
 position = Vector2(100, 100)
+script = ExtResource("1_3rr1n")
 
 [node name="BoardShape" type="CollisionShape2D" parent="."]
 position = Vector2(284, 500)
 shape = SubResource("RectangleShape2D_ht1kr")
 
 [node name="Background" type="Sprite2D" parent="BoardShape"]
-position = Vector2(-9.53674e-07, -2.02656e-05)
-scale = Vector2(0.4, 1.06572)
-texture = ExtResource("1_oecog")
+position = Vector2(-1.94013e-05, 0)
+scale = Vector2(19.2, 21.4286)
+texture = ExtResource("2_odp24")
 
 [node name="Icons" type="CollisionShape2D" parent="."]
 position = Vector2(284, 60)
@@ -75,7 +78,12 @@ texture = ExtResource("7_wqmp6")
 position = Vector2(284, 636)
 shape = SubResource("RectangleShape2D_yw2rf")
 
-[node name="TestCard" type="Sprite2D" parent="Deck"]
-position = Vector2(-8, -7.99997)
-scale = Vector2(0.819489, 0.819489)
-texture = ExtResource("8_u7ro6")
+[node name="CardReverse" type="Sprite2D" parent="Deck"]
+position = Vector2(1.14441e-05, -5.14984e-05)
+scale = Vector2(0.64, 0.704)
+texture = ExtResource("9_45sy3")
+
+[node name="CardBorder" type="Sprite2D" parent="Deck"]
+position = Vector2(-7.62939e-06, 0)
+scale = Vector2(0.64, 0.704)
+texture = ExtResource("10_mhji5")

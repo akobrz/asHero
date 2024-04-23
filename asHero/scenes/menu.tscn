@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://badp555l8i1w3"]
+
+[ext_resource type="Script" path="res://scenes/scripts/menu.gd" id="1_1q6m5"]
+[ext_resource type="Texture2D" uid="uid://bm4b6puenn87e" path="res://assets/board/backgrounds/default_background.jpg" id="2_y8mvl"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1q6m5")
+
+[node name="new_game" type="Button" parent="."]
+offset_left = 277.0
+offset_top = 230.0
+offset_right = 527.0
+offset_bottom = 330.0
+text = "New game"
+
+[node name="continue_game" type="Button" parent="."]
+offset_left = 278.0
+offset_top = 359.0
+offset_right = 528.0
+offset_bottom = 459.0
+text = "Continue game"
+
+[node name="exit_game" type="Button" parent="."]
+offset_left = 279.0
+offset_top = 487.0
+offset_right = 529.0
+offset_bottom = 587.0
+text = "Exit game"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -475.0
+offset_top = -50.0
+offset_right = 1445.0
+offset_bottom = 1255.0
+mouse_filter = 2
+texture = ExtResource("2_y8mvl")
+
+[connection signal="button_up" from="new_game" to="." method="_on_new_game_button_up"]
+[connection signal="button_up" from="continue_game" to="." method="_on_continue_game_button_up"]
+[connection signal="button_up" from="exit_game" to="." method="_on_exit_game_button_up"]

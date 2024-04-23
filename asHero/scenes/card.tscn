@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://f56jjw5m5hpk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_auebg"]
+
+[node name="Card" type="Area2D"]
+visible = false
+
+[node name="CardShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_auebg")
+
+[node name="Background" type="Sprite2D" parent="CardShape"]
+
+[node name="Image" type="Sprite2D" parent="CardShape"]
+
+[node name="Border" type="Sprite2D" parent="CardShape"]
+
+[node name="Text" type="Label" parent="CardShape"]
+offset_left = 135.0
+offset_top = 77.0
+offset_right = 388.0
+offset_bottom = 184.0
+text = "Text Test"
+
+[node name="LeftChoice" type="Label" parent="CardShape"]
+offset_left = 135.0
+offset_top = 77.0
+offset_right = 388.0
+offset_bottom = 184.0
+text = "Text Test"
+
+[node name="RightChoice" type="Label" parent="CardShape"]
+offset_left = 135.0
+offset_top = 77.0
+offset_right = 388.0
+offset_bottom = 184.0
+text = "Text Test"
